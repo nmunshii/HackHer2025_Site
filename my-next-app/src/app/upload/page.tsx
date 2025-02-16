@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from "next/link";
 import { UploadButton } from "@bytescale/upload-widget-react";
-import { sendImageFile } from '@/lib/apiCalls';
+import { sendImageFile, verifyAPI } from '@/lib/apiCalls';
 import { UploadWidgetReactConfig } from '@bytescale/upload-widget-react/dist/UploadWidgetReactConfig';
 
 export function Upload() {
@@ -10,7 +10,7 @@ export function Upload() {
     // Full Configuration:
     // https://www.bytescale.com/docs/upload-widget#configuration
     const options = {
-        apiKey: "free", // Get API keys from: www.bytescale.com
+        apiKey: "public_G22nhZPE7xFZik9jC1oupdnxHtNw", // Get API keys from: www.bytescale.com
         multi: false,
         maxFileCount: 1
     };
@@ -68,9 +68,11 @@ export function Upload() {
 
                                 // Convert blob to File object
                                 const convertedFile = new File([blob], file.originalFile.file.name || "", {
-                                    type:file.originalFile.file.type
+                                    type: file.originalFile.file.type
                                 });
 
+                                console.log(convertedFile)
+                                // await verifyAPI();
                                 await sendImageFile(convertedFile);
                                 alert("File uploaded and sent successfully.");
                             } catch (error) {

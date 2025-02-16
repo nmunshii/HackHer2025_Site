@@ -5,7 +5,7 @@ export const sendImageFile = async (file: File) => {
     formData.append("file", file);
 
     try {
-        const response = await axios.post("/api/upload", formData, {
+        const response = await axios.post("http://127.0.0.1:3010/api/upload", formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -13,6 +13,18 @@ export const sendImageFile = async (file: File) => {
 
         return response.data;
     } catch (error) {
-        throw new Error("Failed to upload image");
+        console.error("Error uploading image:", error);
+        return { success: false, message: "Failed to upload image" };
+    }
+}
+
+export const verifyAPI = async () => {
+    try {
+        const response = await axios.get("http://127.0.0.1:3010/api/");
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error("Error verifying:", error);
+        return { success: false, message: "Verification failed" };
     }
 }
