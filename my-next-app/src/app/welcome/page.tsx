@@ -4,7 +4,7 @@ export function Welcome() {
     return (
         <main className="relative flex flex-col items-center justify-start pb-4 min-h-screen">
             {/* Background Layer */}
-            <div className="absolute inset-0 bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat grayscale-[30%] z-0"></div> {/* Lower z-index for background */}
+            <div className="absolute inset-0 bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat z-0"></div> {/* Lower z-index for background */}
 
             {/* Fixed Header */}
             <div className="w-full h-[68px] bg-black flex items-center justify-between px-8 shadow-lg z-10">
@@ -32,7 +32,7 @@ export function Welcome() {
 
             {/* Main Content */}
             <div className="flex flex-col items-center justify-center w-full pt-[80px] z-10"> {/* Ensuring content has higher z-index */}
-                <h1 className="text-[60px] font-bold text-gray-800 mb-2">
+                <h1 className="text-[60px] font-bold text-gray-800 mb-2 pt-8 drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                     <span className="text-[#683BFC] font-serif italic">DeFaux</span> Data Detector
                 </h1>
                 <p className="text-black text-center text-2xl mb-9">
@@ -41,13 +41,13 @@ export function Welcome() {
                     We flush out altered or untrustworthy files to keep your data faux-free.
                 </p>
 
-                <div className="w-[80%] h-60 bg-[#4B4949] rounded-4xl mb-8"> {/* Increased height to 40% */}
+                <div className="w-[80%] h-60 bg-[#4B4949E6] rounded-3xl mb-8">
 
                     <div className="flex h-full">
                         {/* Upload Section */}
                         <div className="flex-1 flex flex-col items-center justify-center border-r-3 border-white">
                             <Link href="/upload">
-                                <div className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
+                                <div className="bg-[#683BFC] text-white px-20 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
                                     Upload
                                 </div>
                             </Link>
@@ -60,7 +60,7 @@ export function Welcome() {
                         {/* Verify Section */}
                         <div className="flex-1 flex flex-col items-center justify-center">
                             <Link href="/verify">
-                                <div className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
+                                <div className="bg-[#683BFC] text-white px-20 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
                                     Verify
                                 </div>
                             </Link>
@@ -71,8 +71,9 @@ export function Welcome() {
                         </div>
                     </div>
                 </div>
-
-                <button className="text-[#683BFC] text-2xl font-serif italic hover:underline">Our Goal</button>
+                <Link href="/about">
+                    <div className="text-[#683BFC] text-2xl font-serif italic hover:underline">Our Goal</div>
+                </Link>
             </div >
         </main >
     );
