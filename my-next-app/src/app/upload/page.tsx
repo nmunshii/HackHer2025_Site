@@ -5,7 +5,7 @@ import { UploadButton } from "@bytescale/upload-widget-react";
 import { sendImageFile } from '@/lib/apiCalls';
 import { UploadWidgetReactConfig } from '@bytescale/upload-widget-react/dist/UploadWidgetReactConfig';
 
-export function Upload() {
+export default function Upload() {
 
     // Full Configuration:
     // https://www.bytescale.com/docs/upload-widget#configuration
@@ -95,4 +95,3 @@ export function Upload() {
         </div>
     );
 }
-export default Upload;

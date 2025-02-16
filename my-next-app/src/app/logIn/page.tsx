@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-export function LogIn() {
+export default function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
@@ -72,5 +72,3 @@ export function LogIn() {
     </div>
   );
 }
-
-export default LogIn;

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-export function SignUp() {
+export default function SignUp() {
   const [emailData, setEmailData] = useState('');
 
   return (
@@ -77,4 +77,3 @@ export function SignUp() {
     </div >
   );
 }
-export default SignUp;

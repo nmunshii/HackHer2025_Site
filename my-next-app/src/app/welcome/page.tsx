@@ -1,5 +1,5 @@
 import Link from "next/link";
-export function Welcome() {
+export default function Welcome() {
 
     return (
         <main className="relative flex flex-col items-center justify-start pb-4 min-h-screen">
@@ -78,5 +78,3 @@ export function Welcome() {
         </main >
     );
 }
-
-export default Welcome;

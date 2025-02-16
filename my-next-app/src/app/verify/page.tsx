@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export function Verify() {
+export default function Verify() {
   
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
@@ -52,4 +52,3 @@ export function Verify() {
     </div>
   );
 }
-export default Verify;
