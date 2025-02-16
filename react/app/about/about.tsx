@@ -1,9 +1,9 @@
-import Navbar from "./components/navbar";
+import Navbar from "../../components/navbar";
 
 export function About() {
   return (
     <main className="flex items-center justify-center pb-4">
-      <div className="bg-[url('/bubbles-background.jpg')] absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[30%] -z-50">
+      <div className="bg-[url('/background.jpg')] absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[30%] -z-50">
         <Navbar />
         <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)]">
           <h1 className = "text-[60px] font-bold text-gray-800 mb-2">What is <span className="text-[#683BFC] font-serif italic">DeFaux</span>?</h1>
