@@ -1,9 +1,9 @@
-import Navbar from "./components/navbar";
+import Navbar from "../../components/navbar";
 
 export function Welcome() {
   return (
     <main className="flex items-center justify-center pb-4">
-      <div className="bg-[url('/bubbles-background.jpg')] absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[30%] -z-50">
+      <div className="bg-[url('/background.jpg')] absolute inset-0 bg-cover bg-center bg-no-repeat grayscale-[30%] -z-50">
         {/* Header area w buttons */}
         <Navbar />
         {/*main portion*/}
