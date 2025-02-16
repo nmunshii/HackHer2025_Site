@@ -27,10 +27,7 @@ export function Welcome() {
         {/* Auth Buttons */}
         <div className="flex items-center gap-6">
           <button onClick={() => navigate('/signup')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-            Sign Up
-          </button>
-          <button onClick={() => navigate('/login')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-            Log In
+            Exit
           </button>
           <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
         </div>

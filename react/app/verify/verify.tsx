@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Verify() {
   const navigate = useNavigate();
-  
+
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
       {/* Header Bar */}
@@ -23,20 +23,18 @@ export function Verify() {
               </button>
             </div>
           </div>
-          
+
           {/* Auth Buttons and Logo */}
           <div className="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-6">
             <button onClick={() => navigate('/signup')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-              Sign Up
+              Exit
             </button>
-            <button onClick={() => navigate('/login')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-              Log In
-            </button>
+
             <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
           </div>
         </div>
       </div>
-      
+
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center">
         <div className="w-full max-w-[1480px] mx-auto px-8 flex flex-col items-center mt-[-100px]">
@@ -56,5 +54,5 @@ export function Verify() {
       </div>
     </div>
   );
-}   
+}
 export default Verify;

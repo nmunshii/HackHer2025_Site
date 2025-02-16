@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export function LogIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   
   return (
@@ -12,15 +14,6 @@ export function LogIn() {
           {/* Navigation Buttons */}
           <div className="absolute left-8 top-1/2 -translate-y-1/2">
             <div className="flex gap-6 text-sky-100">
-              <button onClick={() => navigate('/')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Home
-              </button>
-              <button onClick={() => navigate('/upload')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Upload
-              </button>
-              <button onClick={() => navigate('/verify')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Verify
-              </button>
             </div>
           </div>
           
@@ -45,18 +38,27 @@ export function LogIn() {
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
               <input
-                type="email"
-                id="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password:</label>
               <input
-                type="password"
-                id="password"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
+            </div>
+            <div>
+              <button type="submit" onClick={(e) => {
+                e.preventDefault();
+                navigate("/welcome")}} className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">Log in</button>
             </div>
             <div className="mt-6 text-center text-sm">
               <div className="text-black mb-2">Don't have an account with us?</div>

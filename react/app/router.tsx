@@ -4,12 +4,14 @@ import LogIn from "./login/login";
 import SignUp from "./signup/signup";
 import Upload from "./upload/upload";
 import Verify from "./verify/verify";
+import Home from "./routes/home";
 
 function App() {
   return (
     <Router> 
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/upload" element={<Upload />} />

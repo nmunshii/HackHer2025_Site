@@ -17,5 +17,9 @@ export default [
   {
     path: "verify",
     file: "verify/verify.tsx"
+  },
+  {
+    path: "welcome",
+    file: "welcome/welcome.tsx"
   }
 ] satisfies RouteConfig;

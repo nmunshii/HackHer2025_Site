@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export function SignUp() {
+  const [emailData, setEmailData] = useState('');
   const navigate = useNavigate();
   
   return (
@@ -37,8 +38,10 @@ export function SignUp() {
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
               <input
                 type="email"
+                value={emailData}
+                onChange={(e) => setEmailData(e.target.value)}
                 id="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
             <div>
@@ -49,9 +52,19 @@ export function SignUp() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
+            <div>
+            <button onClick={(e) => {
+              e.preventDefault();
+              navigate('/welcome')}} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              Join Now
+            </button>
+            </div>
             <div className="mt-6 text-center text-sm">
               <span className="text-black">Already have an account with us? </span>
-              <button onClick={() => navigate('/login')} className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
+              <button type="button" onClick={(e) => {
+                e.preventDefault();
+                navigate('/login')
+                }} className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
                 Log in
               </button>
             </div>
