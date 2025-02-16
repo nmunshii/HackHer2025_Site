@@ -1,33 +1,32 @@
+import Link from 'next/link';
 import React from 'react';
 
-export function Verify() {
+export default function Verify() {
   
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
       {/* Header Bar */}
       <div className="w-full h-[68px] bg-black relative">
-        <div className="w-full h-full px-8 relative">
-          {/* Navigation Buttons */}
-          <div className="absolute left-8 top-1/2 -translate-y-1/2">
-            <div className="flex gap-6 text-sky-100">
-              <button onClick={() => navigate('/')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Home
-              </button>
-              <button onClick={() => navigate('/upload')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Upload
-              </button>
-              <button onClick={() => navigate('/verify')} className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-                Verify
-              </button>
-            </div>
+        {/* Fixed Header */}
+        <div className="w-full h-[68px] bg-black flex items-center justify-between px-8 shadow-lg z-10">
+          {/* Navigation Links */}
+          <div className="flex gap-6 text-sky-100">
+            <Link href="/" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              Home
+            </Link>
+            <Link href="/upload" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              Upload
+            </Link>
+            <Link href="/verify" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              Verify
+            </Link>
           </div>
 
-          {/* Auth Buttons and Logo */}
-          <div className="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-6">
-            <button onClick={() => navigate('/signup')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+          {/* Auth Buttons */}
+          <div className="flex items-center gap-6">
+            <Link href="/signup" className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
               Exit
-            </button>
-
+            </Link>
             <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
           </div>
         </div>
@@ -53,4 +52,3 @@ export function Verify() {
     </div>
   );
 }
-export default Verify;

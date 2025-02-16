@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 
-export function LogIn() {
+export default function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
@@ -56,7 +56,7 @@ export function LogIn() {
               />
             </div>
             <div>
-              <Link href="/welcome">
+              <Link href="/">
                 <div className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</div>
               </Link>
             </div>
@@ -72,5 +72,3 @@ export function LogIn() {
     </div>
   );
 }
-
-export default LogIn;

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-export function SignUp() {
+export default function SignUp() {
   const [emailData, setEmailData] = useState('');
 
   return (
@@ -57,7 +57,7 @@ export function SignUp() {
               />
             </div>
             <div>
-              <Link href="/welcome">
+              <Link href="/">
                 <div className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                   Join Now
                 </div>
@@ -77,4 +77,3 @@ export function SignUp() {
     </div >
   );
 }
-export default SignUp;
