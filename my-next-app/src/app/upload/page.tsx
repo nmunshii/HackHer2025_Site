@@ -23,7 +23,7 @@ export default function Upload() {
                     {/* Navigation Buttons */}
                     <div className="absolute left-8 top-1/2 -translate-y-1/2">
                         <div className="flex gap-6 text-sky-100">
-                            <Link href="/welcome" passHref>
+                            <Link href="/" passHref>
                                 <div className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                                     Home
                                 </div>

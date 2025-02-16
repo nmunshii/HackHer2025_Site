@@ -56,7 +56,7 @@ export default function LogIn() {
               />
             </div>
             <div>
-              <Link href="/welcome">
+              <Link href="/">
                 <div className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</div>
               </Link>
             </div>
