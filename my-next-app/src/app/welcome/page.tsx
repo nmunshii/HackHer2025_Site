@@ -1,8 +1,5 @@
-import Navbar from "../../components/navbar";
-import { Link, useNavigate } from "react-router-dom";
-
+import Link from "next/link";
 export function Welcome() {
-    const navigate = useNavigate();
 
     return (
         <main className="relative flex flex-col items-center justify-start pb-4 min-h-screen">
@@ -13,22 +10,22 @@ export function Welcome() {
             <div className="w-full h-[68px] bg-black flex items-center justify-between px-8 shadow-lg z-10">
                 {/* Navigation Links */}
                 <div className="flex gap-6 text-sky-100">
-                    <Link to="/" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                    <Link href="/welcome" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                         Home
                     </Link>
-                    <Link to="/upload" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                    <Link href="/upload" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                         Upload
                     </Link>
-                    <Link to="/verify" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                    <Link href="/verify" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                         Verify
                     </Link>
                 </div>
 
                 {/* Auth Buttons */}
                 <div className="flex items-center gap-6">
-                    <button onClick={() => navigate('/signup')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                    <Link href="/signup" className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                         Exit
-                    </button>
+                    </Link>
                     <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
                 </div>
             </div>
@@ -49,9 +46,11 @@ export function Welcome() {
                     <div className="flex h-full">
                         {/* Upload Section */}
                         <div className="flex-1 flex flex-col items-center justify-center border-r-3 border-white">
-                            <button onClick={() => navigate('/upload')} className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
-                                Upload
-                            </button>
+                            <Link href="/upload">
+                                <div className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
+                                    Upload
+                                </div>
+                            </Link>
                             <p className="text-white text-2xl mt-4 text-center">
                                 Upload a file (image, video, or audio) to be <br />
                                 encrypted for future verification.
@@ -60,9 +59,11 @@ export function Welcome() {
 
                         {/* Verify Section */}
                         <div className="flex-1 flex flex-col items-center justify-center">
-                            <button onClick={() => navigate('/verify')} className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
-                                Verify
-                            </button>
+                            <Link href="/verify">
+                                <div className="bg-[#683BFC] text-white w-70 py-4 rounded-lg hover:bg-[#5731D6] transition-colors font-bold shadow-lg text-3xl">
+                                    Verify
+                                </div>
+                            </Link>
                             <p className="text-white text-2xl mt-4 text-center">
                                 Check your files against our secure <br />
                                 database to ensure their validity.
@@ -72,8 +73,8 @@ export function Welcome() {
                 </div>
 
                 <button className="text-[#683BFC] text-2xl font-serif italic hover:underline">Our Goal</button>
-            </div>
-        </main>
+            </div >
+        </main >
     );
 }
 

@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -56,7 +57,7 @@ export function LogIn() {
             </div>
             <div>
               <Link href="/welcome">
-                <a className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</a>
+                <div className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</div>
               </Link>
             </div>
             <div className="mt-6 text-center text-sm">

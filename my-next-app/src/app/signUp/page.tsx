@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export function SignUp() {
   const [emailData, setEmailData] = useState('');
-  
+
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
       {/* Header Bar */}
@@ -13,20 +15,24 @@ export function SignUp() {
             <div className="flex gap-6 text-sky-100">
             </div>
           </div>
-          
+
           {/* Auth Buttons and Logo */}
           <div className="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-6">
-            <button onClick={() => navigate('/signup')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-              Sign Up
-            </button>
-            <button onClick={() => navigate('/login')} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-              Log In
-            </button>
+            <Link href="/signup">
+              <div className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                Sign Up
+              </div>
+            </Link>
+            <Link href="/login">
+              <div className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                Log In
+              </div>
+            </Link>
             <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
           </div>
         </div>
       </div>
-      
+
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-lg w-96">
@@ -51,25 +57,24 @@ export function SignUp() {
               />
             </div>
             <div>
-            <button onClick={(e) => {
-              e.preventDefault();
-              navigate('/welcome')}} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
-              Join Now
-            </button>
+              <Link href="/welcome">
+                <div className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                  Join Now
+                </div>
+              </Link>
             </div>
             <div className="mt-6 text-center text-sm">
               <span className="text-black">Already have an account with us? </span>
-              <button type="button" onClick={(e) => {
-                e.preventDefault();
-                navigate('/login')
-                }} className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
-                Log in
-              </button>
+              <Link href="/login">
+                <div className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
+                  Log in
+                </div>
+              </Link>
             </div>
           </form>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
-} 
+}
 export default SignUp;
