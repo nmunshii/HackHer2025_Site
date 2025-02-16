@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 export function LogIn() {
   return (
@@ -10,26 +9,26 @@ export function LogIn() {
           {/* Navigation Buttons */}
           <div className="absolute left-8 top-1/2 -translate-y-1/2">
             <div className="flex gap-6 text-sky-100">
-              <Link href="/" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              <button className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                 Home
-              </Link>
-              <Link href="/upload" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              </button>
+              <button className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                 Upload
-              </Link>
-              <Link href="/verify" className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+              </button>
+              <button className="hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                 Verify
-              </Link>
+              </button>
             </div>
           </div>
           
           {/* Auth Buttons and Logo */}
           <div className="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-6">
-            <Link href="/signup" className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+            <button className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
               Sign Up
-            </Link>
-            <Link href="/login" className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+            </button>
+            <button className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
               Log In
-            </Link>
+            </button>
             <span className="text-sky-100 text-2xl font-extrabold tracking-wider">© DDD</span>
           </div>
         </div>
@@ -58,9 +57,9 @@ export function LogIn() {
             </div>
             <div className="mt-6 text-center text-sm">
               <span>Don't have an account with us? </span>
-              <Link href="/signup" className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
+              <button className="text-purple-600 hover:text-purple-800 transition-colors font-medium">
                 Sign up
-              </Link>
+              </button>
             </div>
           </form>
         </div>
