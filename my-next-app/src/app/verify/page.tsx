@@ -1,8 +1,7 @@
 import React from 'react';
 
 export function Verify() {
-  const navigate = useNavigate();
-
+  
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
       {/* Header Bar */}
