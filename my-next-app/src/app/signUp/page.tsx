@@ -1,9 +1,21 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useUserData } from '@/context/UserProvider';
+import { useRouter } from 'next/navigation';
 
 export default function SignUp() {
   const [emailData, setEmailData] = useState('');
+  const [passwordData, setPasswordData] = useState('');
+  const router = useRouter();
+  const {setEmail, setPassword} = useUserData();
+
+  const runJoin = () => {
+    setEmail(emailData);
+    setPassword(passwordData);
+    router.push('/welcome');
+  }
+  
 
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
@@ -53,15 +65,15 @@ export default function SignUp() {
               <input
                 type="password"
                 id="password"
+                value={passwordData}
+                onChange={(e) => setPasswordData(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
             <div>
-              <Link href="/">
-                <div className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
+                <div onClick={runJoin} className="text-sky-100 hover:text-gray-300 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)]">
                   Join Now
                 </div>
-              </Link>
             </div>
             <div className="mt-6 text-center text-sm">
               <span className="text-black">Already have an account with us? </span>

@@ -1,10 +1,20 @@
 "use client";
+import { useUserData } from '@/context/UserProvider';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 export default function LogIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [emailData, setEmailData] = useState('');
+  const [passwordData, setPasswordData] = useState('');
+  const {setEmail, setPassword} = useUserData();
+  const router = useRouter();
+
+  const handlelogin = () => {
+    setEmail(emailData);
+    setPassword(passwordData);
+    router.push('/');
+  };
   
   return (
     <div className="min-h-screen flex flex-col bg-[url('/background.jpg')] bg-cover bg-center">
@@ -40,7 +50,7 @@ export default function LogIn() {
               <input
               type="email"
               id="email"
-              value={email}
+              value={emailData}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
@@ -50,15 +60,13 @@ export default function LogIn() {
               <input
               type="password"
               id="password"
-              value={password}
+              value={passwordData}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
             <div>
-              <Link href="/">
-                <div className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</div>
-              </Link>
+                <div onClick={handlelogin} className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors font-medium shadow-[0_4px_6px_rgba(0,0,0,0.3)] text-center block">Log in</div>
             </div>
             <div className="mt-6 text-center text-sm">
               <div className="text-black mb-2">Don't have an account with us?</div>

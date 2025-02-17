@@ -4,8 +4,10 @@ import Link from "next/link";
 import { UploadButton } from "@bytescale/upload-widget-react";
 import { sendImageFile, verifyAPI } from '@/lib/apiCalls';
 import { UploadWidgetReactConfig } from '@bytescale/upload-widget-react/dist/UploadWidgetReactConfig';
+import { useUserData } from '@/context/UserProvider';
 
 export default function Upload() {
+    const {email} = useUserData();
 
     // Full Configuration:
     // https://www.bytescale.com/docs/upload-widget#configuration
@@ -73,7 +75,7 @@ export default function Upload() {
 
                                 console.log(convertedFile)
                                 // await verifyAPI();
-                                await sendImageFile(convertedFile);
+                                await sendImageFile(convertedFile, email);
                                 alert("File uploaded and sent successfully.");
                             } catch (error) {
                                 console.error("Error processing file:", error);
