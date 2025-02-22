@@ -13,7 +13,7 @@ export default function LogIn() {
   const handlelogin = () => {
     setEmail(emailData);
     setPassword(passwordData);
-    router.push('/');
+    router.push('/welcome');
   };
   
   return (
@@ -51,7 +51,7 @@ export default function LogIn() {
               type="email"
               id="email"
               value={emailData}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmailData(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
@@ -61,7 +61,7 @@ export default function LogIn() {
               type="password"
               id="password"
               value={passwordData}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPasswordData(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
               />
             </div>
